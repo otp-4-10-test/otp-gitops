@@ -11,8 +11,8 @@ resources:
  - argocd/rbac/rbac-external-secrets.yaml
  - argocd/namespaces/namespace-external-secrets.yaml
  
- - argocd/namespaces/namespace-sealed-secrets.yaml
- - argocd/namespaces/namespace-tools.yaml
+#  - argocd/namespaces/namespace-sealed-secrets.yaml
+#  - argocd/namespaces/namespace-tools.yaml # only if doing cloud pak
 
  # Observability
  #- argocd/namespaces/namespace-turbonomic.yaml
