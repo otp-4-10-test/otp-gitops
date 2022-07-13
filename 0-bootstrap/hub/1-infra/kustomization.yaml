@@ -58,16 +58,16 @@ resources:
  
  # OpenShift Data Foundation aka OpenShift Container Storage
  #- unneeded for IBM Cloud ROKS with ODF add-on configured
- - argocd/namespaces/namespace-openshift-storage.yaml
- - argocd/storage.yaml
+#  - argocd/namespaces/namespace-openshift-storage.yaml
+#  - argocd/storage.yaml
  
  # MachineSets and Infra Nodes
  #- unneeded for IBM Cloud ROKS with ODF add-on configured
- - argocd/machinesets.yaml
- - argocd/infraconfig.yaml
+#  - argocd/machinesets.yaml
+#  - argocd/infraconfig.yaml
  
  # Console link
- - argocd/consolelink.yaml
+#  - argocd/consolelink.yaml
 
 patches:
 - target:
@@ -77,7 +77,7 @@ patches:
   patch: |-
     - op: add
       path: /spec/source/repoURL
-      value: ${GIT_BASEURL}/${GIT_ORG}/${GIT_GITOPS_INFRA}
+      value: https://github.com/otp-4-10-test/otp-gitops-infra.git
     - op: add
       path: /spec/source/targetRevision
-      value: ${GIT_GITOPS_BRANCH}
+      value: master
